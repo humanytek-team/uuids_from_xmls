@@ -1,0 +1,15 @@
+[[package]]
+name = "xmltodict"
+version = "0.13.0"
+description = "Makes working with XML feel like you are working with JSON"
+category = "main"
+optional = false
+python-versions = ">=3.4"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.10"
+content-hash = "2b8342ec9027e73d4e02129164d021a600c285eae9437e14474ce659051a196f"
+
+[metadata.files]
+xmltodict = []
