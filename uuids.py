@@ -56,14 +56,14 @@ def process(file_path: str) -> Tuple[str, str]:
         tfd = get_tfd(cfdi_dict)
     except InvalidCFDI as e:
         raise InvalidCFDI(f"{file_path}: {e}")
-    uuid = tfd["@UUID"]
+    uuid = tfd["@UUID"].upper()
     return (uuid, file_path)
 
 def main(xmls_path: str, uuids_path, output_path: str) -> None:
     # Process all .xml files in the given path
     with open(uuids_path, "r") as f:
         reader = csv.reader(f)
-        uuids: set[str] = {row[0] for row in reader}
+        uuids: set[str] = {row[0].upper() for row in reader}
     # Get all files, including subdirectories
     for root, _, files in os.walk(xmls_path):
         for file in files:
